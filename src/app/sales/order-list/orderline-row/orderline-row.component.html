@@ -1,0 +1,19 @@
+<mat-card class="login-wrapper">
+    <dl-orderline-image [orderline]="orderline"></dl-orderline-image>
+    <mat-card-header>
+        <mat-card-title>{{orderline.name}}</mat-card-title>
+        <mat-card-subtitle>
+            <dl-orderline-department [orderline]="orderline"></dl-orderline-department>
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p>
+            SKU# {{orderline.sku}}
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button>LIKE</button>
+        <button mat-raised-button>SHARE</button>
+    </mat-card-actions>
+    <dl-price-display [price]="orderline.price"></dl-price-display>
+</mat-card>

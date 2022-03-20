@@ -1,0 +1,6 @@
+<div class="dept">
+    <span *ngFor="let name of orderline.department; let i=index">
+        <a href="#">{{name}}</a>
+        <span> {{i < (orderline.department.length - 1)? '>' :''}}</span>
+        </span>
+</div>

@@ -1,0 +1,33 @@
+<mat-card>
+    <dl-orderline-row *ngFor="let line of orderlist" [orderline]="line" (click)="clicked(line)" [class.selected]="isSelected(line)"></dl-orderline-row>
+</mat-card>
+
+<table mat-table [dataSource]="orderlist" class="mat-elevation-z8">
+
+    <!-- Sku Column -->
+    <ng-container matColumnDef="sku">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let orderline"> {{orderline.sku}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let orderline"> {{orderline.name}} </td>
+    </ng-container>
+
+    <!-- imageUrl Column -->
+    <ng-container matColumnDef="imageUrl">
+        <th mat-header-cell *matHeaderCellDef> Photo </th>
+        <td mat-cell *matCellDef="let orderline"> <img mat-card-image src="{{orderline.imageUrl}}" alt="Photo of an ordered product"> </td>
+    </ng-container>
+
+    <!-- Price Column -->
+    <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Price </th>
+        <td mat-cell *matCellDef="let orderline"> {{orderline.price}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

@@ -1,0 +1,40 @@
+.f-footer {
+    clear: both;
+    padding-top: 40px;
+}
+
+.f-strip {
+    background-color: #022344;
+    padding: 24px 0;
+}
+
+.wrap {
+    margin: 0 auto;
+    min-width: 320px;
+    position: relative;
+    text-align: left;
+    color: red;
+}
+
+.f-strip-wrap {
+    display: flex;
+    justify-content: space-around;
+}
+
+.f-strip-cont {
+    background: url(https://cdn.carid.com/css/prod-images/9b545ce1.svg) no-repeat center top;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 700;
+    line-height: 1.5;
+    max-width: 33.333%;
+    padding-top: 54px;
+    text-align: center;
+}
+
+.f-copyright {
+    color: #464646;
+    font-size: 1.2em;
+    padding: 0 8px;
+    text-align: center;
+}

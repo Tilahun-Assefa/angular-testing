@@ -1,0 +1,22 @@
+<div class="col-4">
+    <mat-card class="">
+        <mat-card-content class="ml-3">{{item.votes}}</mat-card-content>
+        <label >Points</label>
+    </mat-card>
+</div>
+<div class="col-8">
+    <a class="header" href="{{item.link}}">{{item.name}}</a>
+    <div class="meta">({{item.domain()}})</div>
+    <ul>
+        <li class="badge">
+            <a href (click)="voteUp()">
+                <mat-icon>arrow_upward</mat-icon> upvote
+            </a>
+        </li>
+        <li class="badge">
+            <a href (click)="voteDown()">
+                <mat-icon>arrow_downward</mat-icon>downvote
+            </a>
+        </li>
+    </ul>
+</div>

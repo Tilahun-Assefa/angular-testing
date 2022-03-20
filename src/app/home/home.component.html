@@ -1,0 +1,14 @@
+<mat-card class="">
+    <mat-card-header> Hello {{username$ | async}}</mat-card-header>
+    <mat-list>
+        <h4>Users from secure api end points</h4>
+        <mat-spinner *ngIf="loading$ |async" class=""></mat-spinner>
+        <mat-list-item *ngFor="let customer of customers$ | async as customers">
+            <mat-icon mat-list-icon>folder</mat-icon>
+            {{customer.username}}
+        </mat-list-item>
+    </mat-list>
+    <button mat-button color="primary" [ngStyle]="{'color': 'red'}" (click)="logout()">Log Out</button>
+    <div [ngClass]="{'bordered': true}" [style.background-color]="'yellow'" style="color: blue;">Style fixed</div>
+    <div>split with h {{result}} <br>and ex exec {{test}} <br>with index {{searchIndex}}</div>
+</mat-card>

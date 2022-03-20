@@ -1,0 +1,13 @@
+:host {
+    display: block;
+    height: 100%;
+}
+
+.wrapper {
+    height: 100%;
+}
+
+.bordered {
+    border: 1px dashed blueviolet;
+    background-color: #eee;
+}
