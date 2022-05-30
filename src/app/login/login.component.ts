@@ -39,20 +39,24 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     if (this.loginForm.invalid) {
+      this.errorMessage = "Incorrect Credential";
+      setTimeout(function () {
+        this.errorMessage = '';
+      }.bind(this), 2500);
       return;
     }
     this.submitted = true;
     this.loading = true;
     this.authService.login(this.f.username.value, this.f.password.value)
       .subscribe(
-        data => {
-          this.router.navigate([this.returnUrl]);
-        },
-        error => {
-          this.errorMessage = error;
-          this.loading = false;
-        }
-      )
+        {
+          next: (data) => { this.router.navigate([this.returnUrl]); },
+          error: (error) => {
+            this.errorMessage = error;
+            this.loading = false;
+          },
+          complete: () => console.info('complete')
+        });
   }
 
   onBlur(f) {

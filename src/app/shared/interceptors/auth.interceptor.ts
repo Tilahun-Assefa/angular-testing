@@ -18,13 +18,13 @@ export class AuthInterceptor implements HttpInterceptor {
     if(isLoggedIn && isApiUrl){
       request = request.clone({
         setHeaders: {
-          Authorization: `Basic ${user.authdata}`
+          Authorization: `Bearer ${user.authdata}`
         }
       });
     }
     return next.handle(request).pipe(
       tap(res =>{
-        console.log(`response in authinterceptor ${res}`);
+        console.log(`response in authinterceptor ${JSON.stringify(res)}`);
        }),
     );
   }

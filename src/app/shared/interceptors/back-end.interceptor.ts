@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpResponse, HttpErrorResponse, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
-import { delay, dematerialize, map, materialize, mergeMap, tap } from 'rxjs/operators';
+import { catchError, delay, dematerialize, map, materialize, mergeMap, tap } from 'rxjs/operators';
 import { Customer } from '../../customer/customer';
 
 const users: Customer[] = [
@@ -22,7 +22,10 @@ export class BackEndInterceptor implements HttpInterceptor {
         materialize(),
         tap(res => console.log(res)),
         delay(500),
-        dematerialize()
+        dematerialize(),
+        catchError(err => {          
+          return throwError(() => err);
+        })
       );
 
     function handleRoute() {
@@ -70,7 +73,7 @@ export class BackEndInterceptor implements HttpInterceptor {
     }
 
     function isLoggedOn() {
-      return headers.get('Authorization') === `Basic ${window.btoa('test: test')}`;
+      return headers.get('Authorization') === `Bearer ${window.btoa('test: test')}`;
     }
   }
 }

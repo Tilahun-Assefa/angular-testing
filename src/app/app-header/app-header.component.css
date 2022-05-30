@@ -1,0 +1,80 @@
+.gbox_overlay {
+    background: rgba(0, 0, 0, .75);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.gbox_loader {
+    background-color: rgba(0, 0, 0, .75);
+    border-radius: 4px;
+    display: none;
+    height: 50px;
+    left: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+    position: fixed;
+    top: 50%;
+    width: 50px;
+    z-index: 9999;
+}
+
+div,
+span,
+h1,
+h2,
+p,
+em,
+img,
+strong,
+b,
+u,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+legend,
+form,
+label,
+table,
+tr,
+th,
+td {
+    background: transparent;
+    border: 0;
+    font-size: 100%;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+#scrollfix {
+    background: #fff;
+    overflow: hidden;
+}
+
+body {
+    background-color: #fff;
+    color: #111;
+    font: 62.5% "Roboto", "Arial", "Helvetica", sans-serif;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#scrollfix,
+.main-wrap {
+    left: 0;
+    position: relative;
+    transition: left .3s ease;
+}

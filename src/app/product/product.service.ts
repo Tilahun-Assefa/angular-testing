@@ -38,7 +38,7 @@ export class ProductService {
     .pipe(
       catchError(err => {
         console.log('Handlling locally', err.message);
-        return throwError(err);
+        return throwError(()=>err);
       })
     );
 }

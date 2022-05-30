@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   apiUrl: 'http://localhost:4200',
   youtubeApiKey : "AIzaSyC4qoHL1g-NePvfpg0rNJdcMsSiCX6r8Xw",
-  youtubeApiUrl : "https://youtube.googleapis.com/youtube/v3/search"
+  youtubeApiUrl : "https://youtube.googleapis.com/youtube/v3/search",
+  spotifyApiKey:""
   
 };
 

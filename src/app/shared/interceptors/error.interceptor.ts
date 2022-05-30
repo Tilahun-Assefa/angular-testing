@@ -17,12 +17,12 @@ export class ErrorInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(
       tap(res =>{
-       console.log(`response in errorinterceptor ${res}`);
+       console.log(`response in errorinterceptor ${JSON.stringify(res['body'])}`);
       }),
       catchError(err => {
         if (err.status === 401) {
           //auto logout if 401 is returned from api
-          this.authService.logout();
+          // this.authService.logout();
         }
         if (err.status === 403) {
           //auto logout if 401 is returned from api

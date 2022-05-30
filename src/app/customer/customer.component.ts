@@ -16,7 +16,7 @@ export class CustomerComponent {
 
   customers$ = this.customerService.customersWithAdd$
     .pipe(
-      tap(user => console.log(`${user} in customer component`)),
+      tap(user => console.log(`${JSON.stringify(user)} in customer component`)),
       catchError(err => {
         this.errorMessageSubject.next(err);
         return EMPTY;

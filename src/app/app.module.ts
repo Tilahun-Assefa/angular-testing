@@ -12,6 +12,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppFooterComponent } from './app-footer/app-footer.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
 
+
 @NgModule({
   declarations: [AppComponent, AppFooterComponent, AppHeaderComponent],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, BrowserAnimationsModule, AngularMaterialModule, FlexLayoutModule],

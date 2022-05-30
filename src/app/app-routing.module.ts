@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'product', loadChildren: () => import('./product/product.module').then(m => m.ProductModule), canActivate: [AuthGuard]  },
   { path: 'sales', loadChildren: () => import('./sales/sales.module').then(m => m.SalesModule), canActivate: [AuthGuard]  },
   { path: 'search', loadChildren: () => import('./search-form/search.module').then(m => m.SearchModule), canActivate: [AuthGuard]  },
+  { path: 'music-search', loadChildren: () => import('./music-search/music-search.module').then(m => m.MusicSearchModule) },
   { path: '**', redirectTo: '' }
 ];
 
